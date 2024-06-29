@@ -20,7 +20,8 @@ export function Flag() {
 
   return (
     <div>
-      I am {isOnline? "Online":"Offline"}
+      {/* I am {isOnline? "Online":"Offline"} */}
+      {isOnline? <p>I am Online</p>:<p>I am Offline</p>}
       <br></br> <br></br>
       {/* <button onClick={on}>On</button>
 

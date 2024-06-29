@@ -1,6 +1,7 @@
 
 import './App.css';
 import { Flag } from './Flag/flag';
+import { UserProfile } from './UserProfile/UserProfile';
 import { Counter } from './counter/counter';
 import Greeting from './greeting';
 
@@ -23,6 +24,9 @@ function App() {
      {/* <Counter counterName="Counter2"></Counter> */}
      <hr></hr>
      <Flag></Flag>
+     <hr></hr>
+     <UserProfile></UserProfile>
+     <hr></hr>
 
    
     </div>
