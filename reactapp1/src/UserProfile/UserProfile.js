@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export function UserProfile(){
 
     const user = {
@@ -8,10 +10,12 @@ export function UserProfile(){
         isAdmin : true
     }
 
-    return <div> 
+    const [isLoading, setIsLoading]= useState(false);
+
+    return !isLoading && <div> 
          <p>Name: {user.firstName} {user.lastName}</p>
          <p>Age: {user.age}</p>
-         <p>Gender: {user.gender} </p>
+         {user.isAdmin && <p>Gender:{user.gender}</p>}
          {user.isAdmin? <p>I am an Admin</p>: <p>I am not an Admin</p> }
     </div>
 }
