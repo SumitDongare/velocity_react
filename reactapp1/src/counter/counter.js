@@ -9,6 +9,7 @@ export function Counter(props){
     const increment = ()=>{
         // console.log("Current Count: ", count);
        const updatedCount = count +1;
+
         setCount( updatedCount)
 
         console.log("Updated Count", updatedCount);
@@ -18,9 +19,11 @@ export function Counter(props){
     const decrement = ()=>{
         // console.log("Current Count: ", count);
        const updatedCount = count -1;
+       
         setCount( updatedCount)
 
         console.log("Updated Count", updatedCount);
+
         props.onCountChange(updatedCount)
     }
 
