@@ -4,6 +4,8 @@ import { Flag } from './Flag/flag';
 import { UserProfile } from './UserProfile/UserProfile';
 import { Counter } from './counter/counter';
 import Greeting from './greeting';
+import { TodoList } from './TodoList/TodoList';
+import { UserList } from './UserProfile/UserList';
 
 function App() {
 
@@ -19,14 +21,17 @@ function App() {
      {/* <hr></hr> */}
     {/* <Greeting  name= "Sumit" greeting="Hello"></Greeting> */}
     <hr></hr>
-     <Counter counterName="Counter1" onCountChange= {onCallback}></Counter>
-     <hr></hr>
+     {/* <Counter counterName="Counter1" onCountChange= {onCallback}></Counter>
+     <hr></hr> */}
      {/* <Counter counterName="Counter2"></Counter> */}
      <hr></hr>
-     <Flag></Flag>
+     {/* <Flag></Flag>
+     <hr></hr> */}
+     {/* <UserProfile></UserProfile>
+     <hr></hr> */}
+     {/* <TodoList></TodoList> */}
      <hr></hr>
-     <UserProfile></UserProfile>
-     <hr></hr>
+     <UserList></UserList>
 
    
     </div>

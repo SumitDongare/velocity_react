@@ -1,14 +1,15 @@
 import { useState } from "react"
 
-export function UserProfile(){
+export function UserProfile(user){
 
-    const user = {
-        firstName:"Rohit",
-        lastName: "Sharma",
-        age:40,
-        gender:"Male",
-        isAdmin : true
-    }
+    // const user = {
+    //     id:1,
+    //     firstName:"Rohit",
+    //     lastName: "Sharma",
+    //     age:40,
+    //     gender:"Male",
+    //     isAdmin : true
+    // }
 
     const [isLoading, setIsLoading]= useState(false);
 
