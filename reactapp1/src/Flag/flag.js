@@ -1,13 +1,15 @@
 import { useState } from "react";
 
 export function Flag() {
-  const [currentState, changeState] = useState("Online");
+//   const [currentState, changeState] = useState("Online"); 
+      const [isOnline, setIsOnline] = useState(false) 
+  
 
   const on = () => {
-    changeState("Online");
+    setIsOnline(true);
   };
   const off = () => {
-    changeState("Offline");
+    setIsOnline(false);
   };
 
   const getButton = (handler, buttonName)=>{
@@ -18,7 +20,7 @@ export function Flag() {
 
   return (
     <div>
-      I am {currentState}
+      I am {isOnline? "Online":"Offline"}
       <br></br> <br></br>
       {/* <button onClick={on}>On</button>
 
