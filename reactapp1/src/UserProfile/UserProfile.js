@@ -33,7 +33,7 @@ export function UserProfile(user){
             <React.Fragment> Gender:{user.gender} </React.Fragment> 
             </p>}
          {user.isAdmin? <p>I am an Admin</p>: <p>I am not an Admin</p> }
-         <button onClick={user.onDelete}>Delete</button>
+         
     </div>
 }
 

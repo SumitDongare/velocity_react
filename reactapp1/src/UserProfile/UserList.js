@@ -87,14 +87,13 @@ export function UserList(){
         })
 
       }
-
-      const onDelete= (id)=>{
-        const filteredUsers = users.filter(user=>{
-            return user.id !== id;
-        })
-
+      
+       const onDelete = (id)=>{
+        // alert(id)
+        const filteredUsers = users.filter(user => user.id !== id);
         setUsers([...filteredUsers])
-      }
+       }
+     
 
     return <div>
         
@@ -117,11 +116,11 @@ export function UserList(){
 
             return  <div key={user.id} style={{backgroundColor:'blue', color:'white', width:'200px'}}>
 
-           <UserProfile onDelete={()=>{
-            onDelete(user.id) 
-            }}firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
+           <UserProfile firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
           
-
+            <button onClick={()=>{
+                onDelete(user.id)
+            }}>Delete</button>
           </div>
 
              })}
