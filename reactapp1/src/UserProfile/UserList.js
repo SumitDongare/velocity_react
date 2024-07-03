@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { UserProfile } from "./UserProfile"
+import "./UserList.css"
 
 export function UserList(){
 
@@ -8,7 +9,7 @@ export function UserList(){
             id:1,
         firstName:"Rohit",
         lastName: "Sharma",
-        age:40,
+        age:30,
         gender:"Male",
         isAdmin : true
         },
@@ -16,7 +17,7 @@ export function UserList(){
             id:2,
         firstName:"Hardik",
         lastName: "Pandya",
-        age:40,
+        age:35,
         gender:"Male",
         isAdmin : false
         },
@@ -32,7 +33,9 @@ export function UserList(){
 
     const [formValues, setFormValues] = useState({
         firstName:'',
-        lastName:''
+        lastName:'',
+        age:'',
+       
     })
 
     const onInputChange = (e)=>{
@@ -69,16 +72,28 @@ export function UserList(){
          users.push({
                 "id":users.length+1,
                 "firstName":formValues.firstName,
-                "lastName":formValues.lastName
+                "lastName":formValues.lastName,
+                "age":formValues.age,
+               
             })
 
          setUsers([...users]);
 
         setFormValues({
             firstName:'',
-            lastName: ''
+            lastName: '',
+            age:'',
+           
         })
 
+      }
+
+      const onDelete= (id)=>{
+        const filteredUsers = users.filter(user=>{
+            return user.id !== id;
+        })
+
+        setUsers([...filteredUsers])
       }
 
     return <div>
@@ -92,18 +107,27 @@ export function UserList(){
 
          <input name="firstName" placeholder="First Name" value={formValues.firstName} onChange={onInputChange}></input>
          <input name="lastName" placeholder="Last Name" value={formValues.lastName} onChange={onInputChange}></input>
+         <input name="age" placeholder="Age" value={formValues.age} onChange={onInputChange}></input>
+       
          <br></br>
-         <button onClick={addUser} >Add User</button> 
-
+         <button className="myButton" onClick={addUser} >Add User</button> 
+          
+           <div className="user-list-container">
            {users.map(user =>{
 
-            return  <div key={user.id}>
-                <UserProfile firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
-                <hr></hr>
+            return  <div key={user.id} style={{backgroundColor:'blue', color:'white', width:'200px'}}>
+
+           <UserProfile onDelete={()=>{
+            onDelete(user.id) 
+            }}firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
+          
+
+          </div>
+
+             })}
 
             </div>
-
-           })}
+         
          </div>
 
 

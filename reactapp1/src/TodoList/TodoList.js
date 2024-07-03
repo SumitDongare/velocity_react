@@ -49,7 +49,7 @@ export function TodoList() {
 
 
       {todos.map((todo) => {
-        return <p key = {todo.taskId}>{todo.name}</p>;
+        return <p key = {todo.taskId}> {todo.name} </p>;
       })}
 
     </div>
