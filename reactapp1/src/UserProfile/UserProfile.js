@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./UserProfile.css"
+import React from "react";
 
 export function UserProfile(user){
 
@@ -28,8 +29,12 @@ export function UserProfile(user){
 
          <p className="red-color">Age: {user.age}</p>
          {/* {<p style={{color:user.isAdmin?"green":"red"}}>Gender:{user.gender}</p>} */}
-         {<p className={user.isAdmin?"admin-class":"non-admin-class"}>Gender:{user.gender}</p>}
+         {<p className={user.isAdmin?"admin-class":"non-admin-class"}>
+            <React.Fragment> Gender:{user.gender} </React.Fragment> 
+            </p>}
          {user.isAdmin? <p>I am an Admin</p>: <p>I am not an Admin</p> }
          <button onClick={user.onDelete}>Delete</button>
     </div>
 }
+
+// Fragment : <></>    <Fragment></Fragment>
