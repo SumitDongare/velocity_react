@@ -116,11 +116,11 @@ export function UserList(){
 
             return  <div key={user.id} style={{backgroundColor:'blue', color:'white', width:'200px'}}>
 
-           <UserProfile firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
+           <UserProfile onDelete={onDelete} userId={user.id} firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
           
-            <button onClick={()=>{
+            {/* <button onClick={()=>{
                 onDelete(user.id)
-            }}>Delete</button>
+            }}>Delete</button> */}
           </div>
 
              })}
