@@ -116,7 +116,9 @@ export function UserList(){
 
             return  <div key={user.id} style={{backgroundColor:'blue', color:'white', width:'200px'}}>
 
-           <UserProfile onDelete={onDelete} userId={user.id} firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
+           <UserProfile onDelete={()=>{
+            onDelete(user.id)
+           }}  firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
           
             {/* <button onClick={()=>{
                 onDelete(user.id)

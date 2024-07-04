@@ -34,9 +34,7 @@ export function UserProfile(user){
             </p>}
          {user.isAdmin? <p>I am an Admin</p>: <p>I am not an Admin</p> }
 
-         <button onClick={()=>{
-                user.onDelete(user.userId)
-            }}>Delete</button>
+         <button onClick={user.onDelete}>Delete</button>
          
     </div>
 }
