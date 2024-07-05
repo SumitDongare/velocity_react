@@ -37,10 +37,11 @@ export default function FormExample() {
         <label> 
              Password Input : 
         <input name="passwordInput" type={showPassword?"text":"password"} placeholder='Password Input' value={formInput.passwordInput} onChange={onInputChange}></input>
-         <button onClick={()=>setShowPassword(true)}>Show Password</button>
-         <button onClick={()=>setShowPassword(false)}>Hide Password</button>
+        {showPassword?  <button onClick={()=>setShowPassword(false)}>Hide Password</button>: <button onClick={()=>setShowPassword(true)}>Show Password</button>}
+         
+         
         </label>
-
+ 
         </div>
       
     </div>
