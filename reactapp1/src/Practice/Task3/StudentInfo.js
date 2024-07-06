@@ -57,7 +57,7 @@ export default function StudentInfo() {
 {info.map((val) => {
     
         return <div key = {val.id}>
-            <p>Student Id {val.id}</p>
+            <p>Student Id: {val.id}</p>
             <p>Student Name:{val.name} </p>
             <p>Student Age: {val.age}</p>
             <p>Course: {val.course}</p>
