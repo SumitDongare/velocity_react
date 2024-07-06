@@ -7,6 +7,7 @@ import Greeting from './greeting';
 import { TodoList } from './TodoList/TodoList';
 import { UserList } from './UserProfile/UserList';
 import FormExample from './Forms/FormExample';
+import FormikExample from './Formik/FormikExample';
 
 
 function App() {
@@ -30,12 +31,14 @@ function App() {
      {/* <Flag></Flag>
      <hr></hr> */}
      {/* <UserProfile></UserProfile> */}
-     <hr></hr>
+    
      {/* <TodoList></TodoList> */}
-     <hr></hr>
+    
      {/* <UserList></UserList>  */}
-     <hr></hr>
-     <FormExample></FormExample>
+     
+     {/* <FormExample></FormExample> */}
+     <FormikExample></FormikExample>
+
 
    
     </div>
