@@ -8,6 +8,7 @@ import { TodoList } from './TodoList/TodoList';
 import { UserList } from './UserProfile/UserList';
 import FormExample from './Forms/FormExample';
 import FormikExample from './Formik/FormikExample';
+import ImageCarousel from './ImageCarousel/ImageCarousel';
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
      {/* <UserList></UserList>  */}
      
      {/* <FormExample></FormExample> */}
-     <FormikExample></FormikExample>
+     {/* <FormikExample></FormikExample> */}
+     <ImageCarousel></ImageCarousel>
 
 
    
