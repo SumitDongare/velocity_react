@@ -9,6 +9,7 @@ import { UserList } from './UserProfile/UserList';
 import FormExample from './Forms/FormExample';
 import FormikExample from './Formik/FormikExample';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
+import ContextExample from './Context/ContextExample';
 
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
      
      {/* <FormExample></FormExample> */}
      {/* <FormikExample></FormikExample> */}
-     <ImageCarousel></ImageCarousel>
+     {/* <ImageCarousel></ImageCarousel> */}
+     <ContextExample></ContextExample>
 
 
    
