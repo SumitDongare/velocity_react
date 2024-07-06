@@ -4,12 +4,18 @@ const MyContext = React.createContext();
 
 export default function ContextExample() {
     const [theme, setTheme] = useState('light')
+    const [data, setData] = useState({
+       user:{
+        firstName : 'Rohit',
+       } ,
+        theme:'light'
+    })
 
   return (
     <div>
         Parent Component : {theme}
 
-     <MyContext.Provider value={theme}>
+     <MyContext.Provider value={data}>
         <ChildComponent ></ChildComponent>
      </MyContext.Provider>
 
@@ -33,11 +39,12 @@ function ChildComponent(){
 }
 
 function GrandChildComponent(){
-  const theme = useContext(MyContext)
+  const data = useContext(MyContext)
 
     return (
         <div>
-            Grand : {theme}
+            Grand : {data.user.firstName}
+            {data.theme}
         </div>
     )
 
