@@ -10,6 +10,7 @@ import FormExample from './Forms/FormExample';
 import FormikExample from './Formik/FormikExample';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
 import ContextExample from './Context/ContextExample';
+import UseEffectExample from './UseEffect/UseEffectExample';
 
 
 function App() {
@@ -41,7 +42,8 @@ function App() {
      {/* <FormExample></FormExample> */}
      {/* <FormikExample></FormikExample> */}
      {/* <ImageCarousel></ImageCarousel> */}
-     <ContextExample></ContextExample>
+     {/* <ContextExample></ContextExample> */}
+     <UseEffectExample></UseEffectExample> 
 
 
    
