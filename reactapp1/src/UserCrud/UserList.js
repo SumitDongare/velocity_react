@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserList({usersList}) {
+export default function UserList({usersList, onUserDelete}) {
   return (
     <table>
     <thead>
@@ -17,7 +17,9 @@ export default function UserList({usersList}) {
             <td>{user.mobile}</td>
             <td>
                 <button>Update</button>
-                <button>Delete</button>
+                <button onClick={()=>{
+                    onUserDelete(user.id)
+                }}>Delete</button>
             </td>
         </tr>
 

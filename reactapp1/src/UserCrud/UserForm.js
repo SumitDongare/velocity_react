@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-export default function UserForm() {
+export default function UserForm({onUserFormSubmit}) {
   return (
     <div className='user-creation-form'>
        <Formik
@@ -11,8 +11,10 @@ export default function UserForm() {
             email:'',
             mobile:''
          }}
-         onSubmit={(values)=>{
+         onSubmit={(values, {resetForm})=>{
             console.log("Submitted values", values)
+            onUserFormSubmit(values)
+            resetForm()   // to reset the form inputs 
          }}
 
         >
