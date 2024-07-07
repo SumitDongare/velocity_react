@@ -12,6 +12,7 @@ import FormikExample from './Formik/FormikExample';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
 import ContextExample from './Context/ContextExample';
 import UseEffectExample from './UseEffect/UseEffectExample';
+import UserCrudWrapper from './UserCrud/UserCrudWrapper';
 
 
 function App() {
@@ -23,16 +24,16 @@ function App() {
 
   return (
     <div className="App">
-     <p>
+     {/* <p>
     This is react application
-     </p>
+     </p> */}
      {/* <hr></hr> */}
     {/* <Greeting  name= "Sumit" greeting="Hello"></Greeting> */}
-    <hr></hr>
+    {/* <hr></hr> */}
      {/* <Counter counterName="Counter1" onCountChange= {onCallback}></Counter> */}
-     <hr></hr>
+     {/* <hr></hr> */}
      {/* <Counter counterName="Counter2"></Counter> */}
-     <hr></hr>
+     {/* <hr></hr> */}
      {/* <Flag></Flag>
      <hr></hr> */}
      {/* <UserProfile></UserProfile> */}
@@ -45,8 +46,9 @@ function App() {
      {/* <FormikExample></FormikExample> */}
      {/* <ImageCarousel></ImageCarousel> */}
      {/* <ContextExample></ContextExample> */}
-     <UseEffectExample name={name}></UseEffectExample> 
-     <button onClick={()=>setName(name+Math.random()*10)} >Change Name Prop</button>
+     {/* <UseEffectExample name={name}></UseEffectExample> 
+     <button onClick={()=>setName(name+Math.random()*10)} >Change Name Prop</button> */}
+     <UserCrudWrapper></UserCrudWrapper>
 
 
    
