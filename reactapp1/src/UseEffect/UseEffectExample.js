@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function UseEffectExample() {
+export default function UseEffectExample({name}) {
   const [counter, setCounter] = useState(0);
   const [counter2, setCounter2] = useState(0);
 
@@ -27,10 +27,16 @@ export default function UseEffectExample() {
     console.log(" 4. This is executed when counter or counter2 is updated.")
    }, [counter, counter2])
 
+  //Example 5 : With dependency array, prop  : 
+   useEffect(()=>{
+    console.log(" 5. This is executed when name prop is changed.")
+   }, [name])
+
   return <div>
-    Use Effect Example
+   <p> Use Effect Example: {name} </p>
     {counter}
     <button onClick={()=>setCounter(counter+1)}>Increment</button>
+    <br></br>
     {counter2}
     <button onClick={()=>setCounter2(counter2+1)}>Increment2</button>
     </div>;

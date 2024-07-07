@@ -1,4 +1,5 @@
 
+import {useState} from 'react';
 import './App.css';
 import { Flag } from './Flag/flag';
 import { UserProfile } from './UserProfile/UserProfile';
@@ -14,6 +15,7 @@ import UseEffectExample from './UseEffect/UseEffectExample';
 
 
 function App() {
+  const [name, setName] = useState("Rohit");
 
   const onCallback = (count) => {
     console.log(`Data from child`, count)
@@ -43,7 +45,8 @@ function App() {
      {/* <FormikExample></FormikExample> */}
      {/* <ImageCarousel></ImageCarousel> */}
      {/* <ContextExample></ContextExample> */}
-     <UseEffectExample></UseEffectExample> 
+     <UseEffectExample name={name}></UseEffectExample> 
+     <button onClick={()=>setName(name+Math.random()*10)} >Change Name Prop</button>
 
 
    
