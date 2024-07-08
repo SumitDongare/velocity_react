@@ -1,19 +1,23 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field} from 'formik';
 
-export default function UserForm({onUserFormSubmit}) {
+export default function UserForm({userToBeUpdated, onUserFormSubmit}) {
   return (
     <div className='user-creation-form'>
        <Formik
+       
+        enableReinitialize={true}
+
          initialValues={{
-            firstName:'',
-            lastName:'',
-            email:'',
-            mobile:''
+            firstName:userToBeUpdated?.firstName ||'',
+            lastName: userToBeUpdated?.lastName ||'',
+            email: userToBeUpdated?.email || '',
+            mobile: userToBeUpdated?.mobile ||''
          }}
+
          onSubmit={(values, {resetForm})=>{
             console.log("Submitted values", values)
-            onUserFormSubmit(values)
+            onUserFormSubmit(values, userToBeUpdated?.id)
             resetForm()   // to reset the form inputs 
          }}
 

@@ -17,6 +17,8 @@ export default function UserCrudWrapper() {
       
     ] )
 
+    const [userToBeUpdated , setUserToBeUpdated] = useState(null)
+
     const onDelete = (id) =>{
         const users = usersList.filter(user => user.id !== id)
         setUsersList([...users])
@@ -24,14 +26,29 @@ export default function UserCrudWrapper() {
 
   return (
     <div className='user-crud-wrapper'>
-        <UserForm onUserFormSubmit={(values)=>{
-            console.log('User Created', values)
-            values.id = usersList.length+1;
-            usersList.push(values)
+        <UserForm userToBeUpdated={userToBeUpdated} onUserFormSubmit={(user, id )=>{
+            console.log('User Created', user)
+            if(id){
+                const fUser = usersList.find(userItem=>userItem.id===id);
+                fUser.firstName = user.firstName;
+                fUser.lastName = user.lastName;
+                fUser.email = user.email;
+                fUser.mobile = user.mobile;
+                setUserToBeUpdated(null)
+
+            }else{
+                
+                user.id = usersList.length+1;
+                usersList.push(user)
+            }
             setUsersList([...usersList])
 
         }}></UserForm>
-        <UserList usersList={usersList} onUserDelete={(id)=>{
+
+        <UserList usersList={usersList} onUserUpdate={(user)=>{
+              console.log("Updating user", user)
+             setUserToBeUpdated(user)
+        }} onUserDelete={(id)=>{
             //  alert("delete user "+ id)
         const bool = window.confirm("Do you want to delete?")
         //  console.log("Bool", bool)
