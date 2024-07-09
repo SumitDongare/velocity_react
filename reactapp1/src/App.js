@@ -13,6 +13,7 @@ import ImageCarousel from './ImageCarousel/ImageCarousel';
 import ContextExample from './Context/ContextExample';
 import UseEffectExample from './UseEffect/UseEffectExample';
 import UserCrudWrapper from './UserCrud/UserCrudWrapper';
+import TicTacToe from './TicTacToe/TicTacToe';
 
 
 function App() {
@@ -48,7 +49,8 @@ function App() {
      {/* <ContextExample></ContextExample> */}
      {/* <UseEffectExample name={name}></UseEffectExample> 
      <button onClick={()=>setName(name+Math.random()*10)} >Change Name Prop</button> */}
-     <UserCrudWrapper></UserCrudWrapper>
+     {/* <UserCrudWrapper></UserCrudWrapper> */}
+     <TicTacToe></TicTacToe>
 
 
    
