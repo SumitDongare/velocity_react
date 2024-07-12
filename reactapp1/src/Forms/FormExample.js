@@ -10,7 +10,7 @@ export default function FormExample() {
         passwordInput:'',
         textAreaInput:'',
         selectBoxInput:'',
-        checkBoxInput:true,
+        checkBoxInput:true, 
         radioButtonInput:'',
         selectedDate:''
     })
@@ -27,7 +27,7 @@ export default function FormExample() {
      const onInputChange=(e) => {
         const {name, value, checked, type} = e.target;  //destructing of e.target
         console.log(name, value, checked, type)
-        formInput[name] = type==="checkBox"?checked : value;
+        formInput[name] = type==="checkbox"?checked : value;
         console.log(formInput);
         setFormInput({...formInput})
            
@@ -75,6 +75,7 @@ export default function FormExample() {
 
          </label>
 
+
          <label>
             Radio Input:
             <input checked={formInput.radioButtonInput === 'male'} name="radioButtonInput" type='radio' value="male" onChange={onInputChange}/> Male     
@@ -89,8 +90,10 @@ export default function FormExample() {
           
           <label>
               <p> File Input: </p>
-             <input type='file' onChange={handleFileChange}></input>
+             <input type='file' onChange={handleFileChange} multiple accept='.txt, .jpg'></input>
+             
              <p>Selected File : {selectedFile?.name}</p> 
+
              {/* ?. is optional chaining same as { selectedFile ? selectedFile.name : undefine} */}
           </label>
                  

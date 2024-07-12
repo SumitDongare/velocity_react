@@ -2,4 +2,24 @@
   text-align: center;
 }
 
+.header{
+  background-color: antiquewhite;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+
+.container-body{
+  display: flex;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+   gap: 10px;
+  width: 150px;
+  height: 100vh;
+  background-color: aliceblue;
+}

@@ -1,6 +1,8 @@
 
 import {useState} from 'react';
 import './App.css';
+import { Link, Route, Routes } from 'react-router-dom';
+
 import { Flag } from './Flag/flag';
 import { UserProfile } from './UserProfile/UserProfile';
 import { Counter } from './counter/counter';
@@ -24,7 +26,31 @@ function App() {
   }
 
   return (
+
+
     <div className="App">
+     <div className='header'>APP Component</div>
+     <div className='container-body'>
+      <div className='sidebar'>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/counter-path"}>Counter</Link>
+        <Link to={"/greeting-path"}>Greeting</Link>
+      </div>
+      <div className='content'>
+       
+        <Routes>
+          <Route path="/" element={<div>Content Div</div>}>Content Div</Route>
+          <Route path="/counter-path" element={<Counter></Counter>}></Route>
+          <Route path="/greeting-path" element={<Greeting  name= "Sumit" greeting="Hello"></Greeting>}></Route>
+          <Route path='*' element={<div>This url is not mapped</div>}></Route>
+         
+        </Routes>
+
+      </div>
+     </div>
+
+
+
      {/* <p>
     This is react application
      </p> */}
@@ -50,7 +76,7 @@ function App() {
      {/* <UseEffectExample name={name}></UseEffectExample> 
      <button onClick={()=>setName(name+Math.random()*10)} >Change Name Prop</button> */}
      {/* <UserCrudWrapper></UserCrudWrapper> */}
-     <TicTacToe></TicTacToe>
+     {/* <TicTacToe></TicTacToe> */}
 
 
    

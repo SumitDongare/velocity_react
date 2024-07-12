@@ -21,6 +21,7 @@ export default function ContextExample() {
 
      <button onClick={()=>{
         setTheme(theme==='light' ? 'dark' : 'light')
+
      }}>Change Theme</button>
       
     </div>
@@ -43,8 +44,15 @@ function GrandChildComponent(){
 
     return (
         <div>
+            <div>
             Grand : {data.user.firstName}
+            </div>
+            
+            <div>
             {data.theme}
+
+            </div>
+
         </div>
     )
 

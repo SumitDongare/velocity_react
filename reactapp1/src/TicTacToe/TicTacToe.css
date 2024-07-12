@@ -1,3 +1,10 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 .game-board{
     /* border: 1px solid gray; */
     /* width: 200px;
@@ -6,6 +13,7 @@
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
+   
 }
 
 .square{

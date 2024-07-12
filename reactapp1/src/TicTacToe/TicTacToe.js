@@ -27,7 +27,7 @@ export default function TicTacToe() {
 
   return (
 
-    <div>
+    <div className='container'>
         {winner? <div> Winner is : {winner}</div> : <div> Next Player: {isXNext?'X':'O'}</div> }
         
         <div className='game-board'>
@@ -38,7 +38,7 @@ export default function TicTacToe() {
                 }} > {value} </div>
 
             })}
-            <div></div>
+            
         </div>
       
     </div>

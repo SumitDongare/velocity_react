@@ -30,6 +30,7 @@ export default function UserCrudWrapper() {
             console.log('User Created', user)
             if(id){
                 const fUser = usersList.find(userItem=>userItem.id===id);
+
                 fUser.firstName = user.firstName;
                 fUser.lastName = user.lastName;
                 fUser.email = user.email;
@@ -45,10 +46,12 @@ export default function UserCrudWrapper() {
 
         }}></UserForm>
 
+
         <UserList usersList={usersList} onUserUpdate={(user)=>{
               console.log("Updating user", user)
-             setUserToBeUpdated(user)
-        }} onUserDelete={(id)=>{
+             setUserToBeUpdated(user) }} 
+
+         onUserDelete={(id)=>{
             //  alert("delete user "+ id)
         const bool = window.confirm("Do you want to delete?")
         //  console.log("Bool", bool)
