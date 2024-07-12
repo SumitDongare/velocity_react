@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './UserCrud.css'
 import UserForm from './UserForm'
 import UserList from './UserList'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
 
 export default function UserCrudWrapper() {
+    const navigate = useNavigate();
 
     const[usersList, setUsersList] = useState([
         {   
@@ -26,7 +28,10 @@ export default function UserCrudWrapper() {
 
   return (
     <div className='user-crud-wrapper'>
-        <UserForm userToBeUpdated={userToBeUpdated} onUserFormSubmit={(user, id )=>{
+        
+        <Routes>
+            <Route path='/' element={<div>User Crud Wrapper</div>}></Route>
+            <Route path='/form' element={ <UserForm userToBeUpdated={userToBeUpdated} onUserFormSubmit={(user, id )=>{
             console.log('User Created', user)
             if(id){
                 const fUser = usersList.find(userItem=>userItem.id===id);
@@ -43,13 +48,19 @@ export default function UserCrudWrapper() {
                 usersList.push(user)
             }
             setUsersList([...usersList])
+            //Navigate
+            navigate("/users/list")
 
-        }}></UserForm>
+        }}></UserForm>}></Route>
 
 
-        <UserList usersList={usersList} onUserUpdate={(user)=>{
+            <Route path='/list' element={<UserList usersList={usersList} onUserUpdate={(user)=>{
               console.log("Updating user", user)
-             setUserToBeUpdated(user) }} 
+             setUserToBeUpdated({...user}) 
+             navigate("/users/form")
+            
+            }} 
+             
 
          onUserDelete={(id)=>{
             //  alert("delete user "+ id)
@@ -58,7 +69,13 @@ export default function UserCrudWrapper() {
          if(bool){
              onDelete(id)
          }
-        }}></UserList>
+        }}></UserList>}></Route>
+            
+        </Routes>
+       
+
+
+        
 
     </div>
   )

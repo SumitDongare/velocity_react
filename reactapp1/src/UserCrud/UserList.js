@@ -1,8 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function UserList({usersList, onUserDelete, onUserUpdate}) {
-  return (
-    <table>
+    const navigate = useNavigate();
+
+
+  return ( <div>
+    <button onClick={()=>navigate("/users/form")}>Add New</button>
+    <br></br>
+    <br></br>
+
+      <table>
     <thead>
         <th>Name</th>
         <th>Email</th>
@@ -10,6 +18,7 @@ export default function UserList({usersList, onUserDelete, onUserUpdate}) {
         <th>Actions</th>
     </thead>
     <tbody>
+       
         {usersList.map((user)=>{
             return  <tr key={user.id}>
             <td>{user.firstName +' '+ user.lastName}</td>
@@ -40,5 +49,8 @@ export default function UserList({usersList, onUserDelete, onUserUpdate}) {
         </tr> */}
     </tbody>
   </table>
+
+  </div>
+  
   )
 }

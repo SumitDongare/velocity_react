@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 import './App.css';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 
 import { Flag } from './Flag/flag';
 import { UserProfile } from './UserProfile/UserProfile';
@@ -19,6 +19,8 @@ import TicTacToe from './TicTacToe/TicTacToe';
 
 
 function App() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("Rohit");
 
   const onCallback = (count) => {
@@ -34,14 +36,21 @@ function App() {
       <div className='sidebar'>
         <Link to={"/"}>Home</Link>
         <Link to={"/counter-path"}>Counter</Link>
-        <Link to={"/greeting-path"}>Greeting</Link>
+        <Link to={"/users"}>Users</Link>
+        {/* <Link to={"/greeting-path"}>Greeting</Link> */}
+        <button onClick={()=>{
+            navigate("/greeting-path")
+        }}>Greeting</button>
       </div>
+      
+
       <div className='content'>
        
         <Routes>
           <Route path="/" element={<div>Content Div</div>}>Content Div</Route>
           <Route path="/counter-path" element={<Counter></Counter>}></Route>
           <Route path="/greeting-path" element={<Greeting  name= "Sumit" greeting="Hello"></Greeting>}></Route>
+          <Route path='/users/*' element={<UserCrudWrapper></UserCrudWrapper>}></Route>
           <Route path='*' element={<div>This url is not mapped</div>}></Route>
          
         </Routes>
