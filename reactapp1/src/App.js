@@ -16,6 +16,7 @@ import ContextExample from './Context/ContextExample';
 import UseEffectExample from './UseEffect/UseEffectExample';
 import UserCrudWrapper from './UserCrud/UserCrudWrapper';
 import TicTacToe from './TicTacToe/TicTacToe';
+import ReduxStoreExample from './redux-store/ReduxStoreExample';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Link to={"/"}>Home</Link>
         <Link to={"/counter-path"}>Counter</Link>
         <Link to={"/users"}>Users</Link>
+        <Link to={"/redux-example"}>Redux Example</Link>
         {/* <Link to={"/greeting-path"}>Greeting</Link> */}
         <button onClick={()=>{
             navigate("/greeting-path")
@@ -50,6 +52,7 @@ function App() {
           <Route path="/" element={<div>Content Div</div>}>Content Div</Route>
           <Route path="/counter-path" element={<Counter></Counter>}></Route>
           <Route path="/greeting-path" element={<Greeting  name= "Sumit" greeting="Hello"></Greeting>}></Route>
+          <Route path='/redux-example' element={<ReduxStoreExample></ReduxStoreExample>}></Route>
           <Route path='/users/*' element={<UserCrudWrapper></UserCrudWrapper>}></Route>
           <Route path='*' element={<div>This url is not mapped</div>}></Route>
          
