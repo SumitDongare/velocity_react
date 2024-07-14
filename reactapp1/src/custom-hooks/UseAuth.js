@@ -1,7 +1,9 @@
 import  { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function useAuth() {
     const [isAuthenticated, setAuth] = useState(false); 
+    const navigate = useNavigate();
 
     useEffect(()=>{
        const token = localStorage.getItem('token');
@@ -10,7 +12,7 @@ export default function useAuth() {
        }else{
         setAuth(false)
        }
-    }, [])
+    }, [navigate])
 
   return isAuthenticated;
 }
