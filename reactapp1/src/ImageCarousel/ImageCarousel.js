@@ -16,13 +16,15 @@ export default function ImageCarousel() {
 
      const onNext = ()=>{
         const nextIndex = currentImageIndex+1
-        setCurrentImageIndex(nextIndex === 6 ? 0 : nextIndex )
+        // setCurrentImageIndex(nextIndex === 6 ? 0 : nextIndex )
+        setCurrentImageIndex(nextIndex === images.length ? 0 : nextIndex )
 
      }
 
      const onPrev = ()=>{
         const nextIndex = currentImageIndex-1
-         setCurrentImageIndex(nextIndex === -1 ? 5 : nextIndex)
+        //  setCurrentImageIndex(nextIndex === -1 ? 5 : nextIndex)
+         setCurrentImageIndex(nextIndex === -1 ? images.length-1 : nextIndex)
      }
 
 
@@ -35,6 +37,7 @@ export default function ImageCarousel() {
          
          <button onClick={onPrev}>Prev</button>
         <img src={images[currentImageIndex]} style={{width:'700px', height:'400px'}}></img>
+
         <button onClick={onNext}>Next</button>
       
     </div>

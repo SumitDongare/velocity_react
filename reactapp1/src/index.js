@@ -5,6 +5,7 @@ import App from './App';
 import App1 from './App1';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import UserForm from './userCrud1/userForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     
      <App />
      {/* <App1 /> */}
+     {/* <UserForm></UserForm> */}
 
     </BrowserRouter>
 

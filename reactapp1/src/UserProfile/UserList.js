@@ -33,7 +33,7 @@ export function UserList(){
 
     const [formValues, setFormValues] = useState({
         firstName:'',
-        lastName:'',
+        lastName:'',    
         age:'',
        
     })
@@ -118,7 +118,7 @@ export function UserList(){
 
            <UserProfile onDelete={()=>{
             onDelete(user.id)
-           }}  firstName  = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
+           }}  firstName = {user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
           
             {/* <button onClick={()=>{
                 onDelete(user.id)

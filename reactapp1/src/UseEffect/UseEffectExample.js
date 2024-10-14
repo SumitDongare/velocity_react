@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 export default function UseEffectExample({name}) {
   const [counter, setCounter] = useState(0);
   const [counter2, setCounter2] = useState(0);
+  // const previousValueRef = useRef();
 
   //Syntax
   // useEffect(()=>{}, [])

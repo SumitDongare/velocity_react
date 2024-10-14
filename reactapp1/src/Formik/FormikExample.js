@@ -1,5 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+// Formik : 
+// https://formik.org/docs/tutorial#setup-for-the-tutori
+// npm i formik
 
 export default function FormikExample() {
   return (
@@ -11,6 +14,7 @@ export default function FormikExample() {
             email:'',
             gender:'male'
          }}
+
          onSubmit={(values)=>{
             console.log("Submitted values", values)
          }}

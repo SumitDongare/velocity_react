@@ -25,7 +25,7 @@ import useAuth from "../custom-hooks/UseAuth";
 
     }
 
- }
+ };
  
  function ExampleComponent(){
     return <div>I am authenticated component</div>
